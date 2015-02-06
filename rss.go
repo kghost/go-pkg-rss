@@ -193,7 +193,7 @@ func (this *Feed) readRss2(doc *xmlx.Document) (err error) {
 			for _, lv := range tl {
 				if lv.Name.Local == "encoded" {
 					i.Content = new(Content)
-					i.Content.Text = lv.String()
+					i.Content.Text = lv.GetValue()
 					break
 				}
 			}
